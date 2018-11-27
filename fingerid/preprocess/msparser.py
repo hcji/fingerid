@@ -8,6 +8,7 @@ import re
 import commands
 import os
 import numpy
+import platform
 
 from spectrum import Spectrum
 from parser import Parser
@@ -34,8 +35,9 @@ class MSParser(Parser):
         # if user's path is not having a "/"                                   
         if dir_path[-1] != "/":
             dir_path = dir_path + "/"
-        # invoke parse file for every file in the dir_path directory           
-        files = commands.getoutput("ls %s" % dir_path).split()
+        # invoke parse file for every file in the dir_path directory 
+        # files = commands.getoutput("ls %s" % dir_path).split()
+        files = os.listdir(dir_path)
         for f in files:
             spec = self.parse_file(dir_path + f)
             spec_list.append(spec)

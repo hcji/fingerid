@@ -11,6 +11,7 @@ import sys
 import commands
 import os
 import numpy
+from glob import glob
 
 from fgtree import FragTree
 from util import sortbyfilenames
@@ -27,11 +28,12 @@ class FragTreeParser:
         # if user's path is not having a "/"                                   
         if dir_path[-1] != "/":
             dir_path = dir_path + "/"
+        # invoke parse file for every file in the dir_path directory   
         # invoke parse file for every file in the dir_path directory           
-        files = commands.getoutput("ls %s" % dir_path).split()
+        files = glob(dir_path + '/*/*')
         count = 0
         for f in files:
-            tree = self.parse_file(dir_path + f)
+            tree = self.parse_file(f)
             tree_list.append(tree)
             count = count + 1
         return sortbyfilenames(tree_list, files)

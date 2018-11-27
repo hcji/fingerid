@@ -23,6 +23,7 @@ The previous versions are hosted on sourceforge: http://sourceforge.net/projects
 Please note that the package had NOT been tested on windows. Running the package on linux
 is suggested.
 
+
 Changes
 =======
 
@@ -37,7 +38,7 @@ Dependencies
 
 - Python >= 2.7
 - Numpy >= 1.4.0
-- [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/) 3.17 python interface
+- [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/) 3.17 python interface [whl](https://www.lfd.uci.edu/~gohlke/pythonlibs/#libsvm)
 - [cvxopt](http://cvxopt.org/install/index.html), optional, only needed if using 'ALIGNF' to combine the kernels
 
 Install

@@ -8,6 +8,8 @@ import commands
 import pickle
 import numpy
 import multiprocessing
+import platform
+import os
 
 from svmutil import *
 
@@ -35,7 +37,7 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
     The trained models will be stored in the folder MODELS
 
     """
-    commands.getoutput("mkdir %s" % model_dir)
+    os.mkdir(model_dir)
     print "Create directory %s to store the trained models" % model_dir
     (n_x, n_x) = kernel.shape
     (n_x, n_y) = labels.shape
